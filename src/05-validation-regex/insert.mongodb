@@ -1,0 +1,7 @@
+use("platzi_store")
+
+db.users.insertOne({
+  email: "w@wbit.ar",
+  password: "12345678",
+  role: "admin"
+})

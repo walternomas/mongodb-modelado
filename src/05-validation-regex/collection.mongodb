@@ -1,0 +1,41 @@
+use("platzi_store")
+
+db.createCollection("users", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["email", "password", "role"],
+      properties: {
+        name: {
+          bsonType: "string",
+          description: "The name of the user"
+        },
+        last_name: {
+          bsonType: "string",
+          description: "The last name of the user"
+        },
+        email: {
+          bsonType: "string",
+          pattern: "^[A-Za-z\d.-]{1,}@[A-Za-z\d.-]{1,}[.]{1}[A-Za-z\d.-]{1,}$",
+          description: "Email must be a valid email address and is required"
+        },
+        password: {
+          bsonType: "string",
+          pattern: "^[A-Za-z0-9]{8,40}$",
+          description: "Password must be a string with at least eight characters and is required"
+        },
+        age: {
+          bsonType: "number",
+          minimum: 18,
+          maximum: 99
+        },
+        is_single: {
+          bsonType: "bool"
+        },
+        role: {
+          enum: ["customer","manager","seller","admin"]
+        }
+      }
+    }
+  }
+})
