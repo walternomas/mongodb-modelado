@@ -4,9 +4,12 @@ db.createCollection("users", {
   validator: {
     $jsonSchema: {
       bsonType: "object",
-      required: ["email", "password", "role"],
+      required: ["_id", "email", "password", "role"],
       additionalProperties: false,
       properties: {
+        _id: {
+          bsonType: "objectId"
+        },
         name: {
           bsonType: "string",
           description: "The name of the user"

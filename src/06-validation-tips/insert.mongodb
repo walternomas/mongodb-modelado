@@ -4,5 +4,5 @@ db.users.insertOne({
   email: "w@wbit.ar",
   password: "12345678",
   role: "admin",
-  social_accounts: ["twitter", "facebook"]
+  is_single: false
 })
