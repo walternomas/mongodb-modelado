@@ -1,0 +1,35 @@
+use("platzi_store")
+
+// db.users.insertOne({
+//   email: "w@wbit.ar",
+//   password: "12345678",
+//   role: "admin",
+//   social_accounts: ["twitter", "facebook"],
+//   address: {
+//     street: "40 1671",
+//     city: "Santa Teresita",
+//     zip: "7107"
+//   },
+//   shipping_address: {
+//     street: "7 1466",
+//     city: "Santa Teresita",
+//     zip: "7107"
+//   }
+// })
+
+db.users.insertOne({
+  email: "jb@wbit.ar",
+  password: "7654321",
+  role: "customer",
+  social_accounts: ["twitter", "facebook"],
+  address: {
+    street: "40 1671 dto 1",
+    city: "Santa Teresita",
+    zip: "7107"
+  },
+  shipping_address: {
+    street: "7 1466 dto 2",
+    city: "Santa Teresita",
+    zip: "7107"
+  }
+})
